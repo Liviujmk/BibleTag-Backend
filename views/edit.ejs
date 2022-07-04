@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit article <%= article.title %></title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <div class="main-container new">
+        <div class="mcn">
+            <h4>Welcome to <a href="/">BibleTag</a></h4>
+            <p>Edith this article: <%= article.title %></p>
+            <form action="/articles/<%= article.title %>?_method=PUT" method="post">
+                <input type="text" name="title" placeholder="Title" value="<%= article.title %>">
+                <br>
+                <input type="text" name="collectionName" placeholder="collection" value="<%= article.collectionName %>">
+                <br>
+                <textarea name="content" placeholder="Content" value="<%= article.content %>" style="height: 100px;"><%= article.content %></textarea>
+                <br>
+                <input type="submit" class="button default" value="Edit article now!!">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

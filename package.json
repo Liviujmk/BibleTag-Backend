@@ -1,0 +1,20 @@
+{
+  "name": "bibletag",
+  "version": "1.0.0",
+  "description": "bible-topics",
+  "main": "server.js",
+  "scripts": {
+    "build": "nodemon server.js"
+  },
+  "author": "Liviu Mitrofan",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.4.2",
+    "nodemon": "^2.0.18"
+  }
+}

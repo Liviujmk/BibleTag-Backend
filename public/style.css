@@ -1,0 +1,122 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 150%;
+    line-height: 1.5;
+    color: #555;
+    background: #eee;
+    margin: 0;
+    padding: 0;
+}
+
+h4 {
+    text-align: center;
+}
+
+.main-title, .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.65rem;
+    margin-bottom: 2.5rem;
+}
+
+.main-container.new{
+    margin: 0;
+    padding: 0;
+}
+
+.main-title h4{
+    font-size: 28px;
+    margin: 10px;
+}
+
+a {
+    color: rgb(85, 106, 133);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+p {
+    text-align: center;
+}
+
+.cont-item {
+    border-bottom: .6px solid #ccc;
+    padding-bottom: 15px;
+}
+
+.cont-item a {
+    font-size: 20px;
+}
+
+form {
+    display: grid;
+}
+
+.button {
+    background: #425774;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .5s;
+}
+.button.red {
+    background: #ca1616;
+}
+.button.green {
+    background: #2a982a;
+}
+
+
+.button:hover {
+    color: white;
+}
+.button.default:hover{
+    background: #60748e;
+}
+.button.red:hover{
+    background: #9e0e0e;
+}
+.button.green:hover{
+    background: #256b25;
+}
+
+
+.button:focus {
+    color: white;
+    border: 1.5px solid black;
+}
+.button.default:focus{
+    background: #4a5f7d;
+}
+.button.red:focus{
+    background: #9e0e0e;
+}
+.button.green:focus{
+    background: #256b25;
+}
+
+
+.button:active {
+    color: white;
+}
+.button.default:active{
+    background: #29374a;
+}
+.button.red:active{
+    background: #4f0e0e;
+}
+.button.green:active{
+    background: #164016;
+}

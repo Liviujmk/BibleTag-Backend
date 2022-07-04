@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <div class="main-title">
+        <h4>Welcome to <a href="/">BibleTag</a></h4>
+        <a href="/articles/new">Create a new article</a>
+    </div>
+    <div class="main-container">
+        <h4>Your articles</h4>
+
+        <div class="cont-item art">
+            <label for="search">Search articles</label>
+            <input type="text" id="search-a" name="search" placeholder="Search articles">
+            <% for (var i = 0; i < articles.length; i++) { %>
+                <div class="">
+                    <a href="/articles/<%= articles[i].title %>" class="topic"><%= articles[i].title %></a>
+                </div>
+            <% } %>
+        </div>
+        <div class="cont-item ver">
+            <label for="search">Search verses</label>
+            <input type="text" id="search-v" name="search" placeholder="Search verses">
+            <% for (var i = 0; i < articles.length; i++) { %>
+                <div class="">
+                    <p class="verse"><%= articles[i].content %></p>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+
+    <script>
+        var searcha = document.getElementById('search-a');
+        var searchv = document.getElementById('search-v');
+        searcha.addEventListener('keyup', function(e) {
+            var filter = e.target.value.toLowerCase();
+            var topics = document.querySelectorAll('.topic');
+            
+            topics.forEach(topic => {
+                if (topic.textContent.toLowerCase().includes(filter.toLowerCase())) {
+                    topic.parentNode.style.display = '';
+                } else {
+                    topic.parentNode.style.display = 'none';
+                }
+            });
+        })
+
+        searchv.addEventListener('keyup', function(e) {
+            var filter = e.target.value.toLowerCase();
+            var verse = document.querySelectorAll('.verse');
+            
+            verse.forEach(verse => {
+                if (verse.textContent.toLowerCase().includes(filter.toLowerCase())) {
+                    verse.parentNode.style.display = '';
+                } else {
+                    verse.parentNode.style.display = 'none';
+                }
+            });
+        })
+    </script>
+    
+</body>
+</html>

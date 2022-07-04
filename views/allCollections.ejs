@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All collections</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <div class="main-container new">
+        <h4>Welcome to <a href="/">BibleTag</a></h4>
+        <h4>All collections: </h4>
+        <div class="art-det">
+            <% for (let i = 0; i < colls.length; i++) { %>
+                <div>
+                    <a href="/articles/collections/<%= colls[i].title %>"><%= colls[i].title %></a>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

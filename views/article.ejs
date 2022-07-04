@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your article</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <div class="main-container new">
+        <h4>Welcome to <a href="/">BibleTag</a></h4>
+        <h4>Your article's details:</h4>
+        <div class="art-det">
+            <p>Title: <%= article.title %></p>
+            <p>Collection: <a href="/articles/collections/<%= article.collectionName %>"><%= article.collectionName %></a></p>
+            <p>Content: <%= article.content %></p>
+        </div>
+        <a href="/articles/<%= article.title %>/edit" class="button green">Edit article</a>
+        <form action="/articles/<%= article.title %>?_method=DELETE" method="post">
+            <button type="submit" class="button red">Delete</button>
+        </form>
+    </div>
+
+    <script>
+        var refTagger = {
+            settings: {
+                bibleVersion: "ESV",
+                linksOpenNewWindow: false,			
+                roundCorners: true,
+                socialSharing: ["google"],
+                customStyle : {
+                    heading: {
+                        backgroundColor : "#ffffff",
+                        color : "#000000",
+                        fontFamily : "sans-serif"
+                    },
+                    body   : {
+                        color : "#000000",
+                        fontFamily : "Georgia, Times, 'Times New Roman', serif"
+                    }
+                }
+            }
+        };
+        (function(d, t) {
+            var n=d.querySelector("[nonce]");
+            refTagger.settings.nonce = n && (n.nonce||n.getAttribute("nonce"));
+            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            g.src = "https://api.reftagger.com/v2/RefTagger.js";
+            g.nonce = refTagger.settings.nonce;
+            s.parentNode.insertBefore(g, s);
+        }(document, "script"));
+    </script> 
+</body>
+</html>
