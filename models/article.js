@@ -5,7 +5,7 @@ const ArticleSchema = new mongoose.Schema({
     title: String,
     content: String,
     createdAt: { type: Date, default: Date.now },
-    collectionName: String,
+    collectionName: [String],
     collectionId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Collection'

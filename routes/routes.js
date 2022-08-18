@@ -22,14 +22,30 @@ router.get('/collections', async(req, res) => {
 router.get('/collections/:coltitle', async(req, res) => {
     //const articles = await Article.find({ collectionName: req.params.coltitle }).exec()
     const articles = await Article.find({ collectionName: req.params.coltitle }).sort({ createdAt: 'desc' })
-
-    console.log(articles);;
     const coll = await Collection.findOne({ title: req.params.coltitle })
+    
     if(!coll) return res.status(404).send(`no such collection. Go back to <a href="/articles/collections">All collections</a>`)
     res.render('collection', {
         articles: articles,
         coll: coll
     })
+})
+
+router.post('/collections/:coltitle', async(req, res) => {
+    const coll = await Collection.findOne({ title: req.params.coltitle })
+    const article = new Article({
+        title: req.body.title,
+        collectionName: req.params.coltitle
+    })
+    try {
+        await article.save()
+        coll.articles.push(article)
+        await coll.save()
+        res.redirect(`/articles/collections/${req.params.coltitle}`)
+    } catch (error) {
+        console.warn(error)
+        res.redirect(`/articles/collections/${req.params.coltitle}`)
+    }
 })
 
 router.get('/:title', async(req, res) => {

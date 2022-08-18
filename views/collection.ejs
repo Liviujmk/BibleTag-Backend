@@ -11,6 +11,11 @@
     <div class="main-container new">
         <h4>Welcome to <a href="/">BibleTag</a></h4>
         <p>The collection's name is: <b><%= coll.title %></b></p>
+        <form action="/articles/collections/<%= coll.title %>" method="post">
+            <input type="text" name="title" placeholder="Title" value="">
+            <br>
+            <input type="submit" class="button default" value="Create article to this collection">
+        </form>
         <p>Down below are all the articles' titles that are included in this collection</p>
         <div class="art-det">
             <% for (let i = 0; i < articles.length; i++) { %>
