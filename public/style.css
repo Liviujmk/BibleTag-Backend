@@ -47,6 +47,7 @@ p {
 .cont-item {
     border-bottom: .6px solid #ccc;
     padding-bottom: 15px;
+    width: 600px;
 }
 
 .cont-item a {
