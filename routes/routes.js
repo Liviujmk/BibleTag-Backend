@@ -71,11 +71,11 @@ router.post('/', async(req, res) => {
     article.content = req.body.content
     coll.title = article.collectionName
     try {
-        if((await Collection.findOne({ title: article.collectionName })) == null) {
+        if((await Collection.findOne({ title: req.body.collectionName })) == null) {
             await coll.save()
         }
 
-        if((await Article.findOne({ title: article.title })) === null) {
+        if((await Article.findOne({ title: req.body.title })) == null) {
             await article.save()
             res.redirect(`/articles/${article.title}`) 
         } else { res.send(`an article with this title already exists so go back to create another article <a href="/articles/new">Go back</a>`) }
