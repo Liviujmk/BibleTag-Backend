@@ -71,7 +71,7 @@ router.post('/', async(req, res) => {
     article.content = req.body.content
     coll.title = article.collectionName
     try {
-        if((await Collection.findOne({ title: article.collectionName })) === null) {
+        if((await Collection.findOne({ title: article.collectionName })) == null) {
             await coll.save()
         }
 
