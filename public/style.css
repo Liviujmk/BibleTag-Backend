@@ -172,7 +172,7 @@ header .nav {
 .flex-container-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 1.5rem;
     margin-bottom: 2.5rem;
@@ -191,7 +191,7 @@ header .nav {
     height: 5rem;
 }
 
-form {
+form:not(.btn) {
     display: grid;
     margin-bottom: 2rem;
 }
@@ -263,4 +263,15 @@ form input:not([type="submit"]), form textarea {
 }
 .button.green:active{
     background: #164016;
+}
+
+@media screen and (max-width: 500px) {
+    .flex-container-cards {
+        flex-direction: column;
+    }
+    /*nav*/
+    header {
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
