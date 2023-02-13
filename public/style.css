@@ -159,6 +159,8 @@ header .nav {
     padding: 4rem;
     border-bottom: 0.6px solid #ccc;
     padding-bottom: 15px;
+    width: 600px;
+    text-align: center;
 }
 
 .cont-item h2 {
@@ -262,23 +264,4 @@ form input:not([type="submit"]), form textarea {
 }
 .button.green:active{
     background: #164016;
-}
-
-@media screen and (max-width: 500px) {
-    .logo {
-        font-size: 1.75rem;
-    }
-    .hero h1 {
-        font-size: 1.95rem;
-    }
-    .hero p {
-        font-size: 0.91rem;
-    }
-}
-
-@media screen and (max-width: 460px) {
-    header {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
 }
