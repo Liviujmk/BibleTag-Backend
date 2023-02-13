@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
+    <%- include('layouts/header') %>
     <div class="main-container new">
         <div class="mcn">
-            <h4>Welcome to <a href="/">BibleTag</a></h4>
-            <p>Create a new article</p>
+            <h2>Create a new article</h2>
             <form action="/articles" method="post">
                 <input type="text" name="title" placeholder="Title" value="<%= article.title %>">
                 <br>
                 <input type="text" name="collectionName" placeholder="collection" value="<%= article.collectionName %>">
                 <br>
-                <textarea name="content" placeholder="Content" value="<%= article.content %>" style="height: 100px;"></textarea>
+                <textarea name="markdown" placeholder="Content" value="<%= article.markdown %>" style="height: 100px;"></textarea>
                 <br>
                 <input type="submit" class="button default" value="Create">
             </form>

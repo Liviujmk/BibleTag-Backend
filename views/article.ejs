@@ -8,18 +8,23 @@
     <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
+    <%- include('layouts/header') %>
     <div class="main-container new">
-        <h4>Welcome to <a href="/">BibleTag</a></h4>
-        <h4>Your article's details:</h4>
-        <div class="art-det">
-            <p>Title: <b><%= article.title %></b></p>
-            <p>Collection: <a href="/articles/collections/<%= article.collectionName %>"><%= article.collectionName %></a></p>
-            <p>Content: <%= article.content %></p>
+        <div class="art-details">
+            <span class="article-tag">
+                <a href="/articles/collections/<%= article.collectionName %>"><%= article.collectionName %></a>
+            </span>
+            <h2 class="article-title"><%= article.title %></h2>
+            <div class="art-content">
+                <%- article.content %>
+            </div>
         </div>
-        <a href="/articles/<%= article.title %>/edit" class="button green">Edit article</a>
-        <form action="/articles/<%= article.title %>?_method=DELETE" method="post">
-            <button type="submit" class="button red">Delete</button>
-        </form>
+        <div class="article-actions">
+            <a href="/articles/<%= article.title %>/edit" class="button green">Edit article</a>
+            <form action="/articles/<%= article.title %>?_method=DELETE" method="post">
+                <button type="submit" class="button red">Delete</button>
+            </form>
+        </div>
     </div>
 
     <script>

@@ -13,10 +13,15 @@ router.get('/new', (req, res) => {
 
 router.get('/collections', async(req, res) => {
     const colls = await Collection.find().sort({ createdAt: 'desc' })
+    colls.forEach(coll => {
+        if(coll.title === '')
+            //remove the collection from the array
+            colls.splice(colls.indexOf(coll), 1)
+    })
+
     res.render('allCollections', {
         colls: colls
     })
-    console.log(colls);
 })
 
 router.get('/collections/:coltitle', async(req, res) => {
@@ -70,6 +75,7 @@ router.post('/', async(req, res) => {
     article.collectionName = req.body.collectionName
     article.content = req.body.content
     coll.title = article.collectionName
+    if(req.body.title === '') return res.send(`title cannot be empty. Go back to <a href="/articles/new">Create article</a>`)
     try {
         if((await Collection.findOne({ title: article.collectionName })) === null) {
             await coll.save()
@@ -89,7 +95,7 @@ router.put('/:title', async(req, res) => {
     const article = await Article.findOne({ title: req.params.title })
     article.title = req.body.title
     article.collectionName = req.body.collectionName
-    article.content = req.body.content
+    article.markdown = req.body.markdown
     try {
         await article.save()
         res.redirect(`/articles/${article.title}`)

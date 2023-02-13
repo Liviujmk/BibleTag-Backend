@@ -1,32 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 *, ::after, ::before {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 150%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 100%;
     line-height: 1.5;
-    color: #555;
-    background: #eee;
+    color: #1c1919;
+    background: #ffffff;
     margin: 0;
     padding: 0;
 }
 
-h4 {
+
+a {
+    color: rgb(19, 20, 21);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+header {
+    color: #1c1919;
+    padding: 2rem 5rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: #241f1f;
+    text-decoration: none;
+}
+
+.logo {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+
+
+header a:hover {
+    text-decoration: underline;
+}
+
+header .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hero {
+    padding: 2rem;
     text-align: center;
 }
 
+.hero h1 {
+    color: #1c1919;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+
 .main-title, .main-container {
-    display: flex;
+    /*display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.65rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.5rem;*/
 }
 
 .main-container.new{
-    margin: 0;
-    padding: 0;
+    padding: 5rem;
+}
+
+.pg-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.art-details {
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #e6e6e6d2;
+}
+
+.article-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2.55rem;
+    margin-top: .2rem;
+}
+
+.article-tag {
+    display: inline-flex;
+    padding: 0.3rem 0.6rem;
+    background-color: #000;
+    cursor: pointer;
+    border-radius: 16px;
+    transition: all .5s;
+}
+
+.article-tag a {
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.art-content p {
+    text-align: left;
+}
+
+.article-actions {
+    display: flex;
+    gap: 1rem;
 }
 
 .main-title h4{
@@ -34,41 +130,89 @@ h4 {
     margin: 10px;
 }
 
-a {
-    color: rgb(85, 106, 133);
-    text-decoration: none;
-    font-weight: 600;
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-p {
-    text-align: center;
+.search-bar input {
+    padding: 0.5rem 1rem;
+    border: 2px solid #ccc;
+    border-radius: 0.85rem;
+    outline: none;
 }
+
+.search-bar input:focus {
+    border: 2px solid #000;
+}
+
+.search-bar input::placeholder {
+    color: #a5a5a5;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
 
 .cont-item {
-    border-bottom: .6px solid #ccc;
+    padding: 4rem;
+    border-bottom: 0.6px solid #ccc;
     padding-bottom: 15px;
 }
 
-.cont-item a {
-    font-size: 20px;
+.cont-item h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3.5rem;
+}
+
+.flex-container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.85rem;
+    width: 17rem;
+    height: 5rem;
 }
 
 form {
     display: grid;
+    margin-bottom: 2rem;
+}
+
+form input:not([type="submit"]), form textarea {
+    padding: 0.5rem 1rem;
+    border: 2px solid #ccc;
+    border-radius: 0.85rem;
+    outline: none;
 }
 
 .button {
-    background: #425774;
+    background: #1e1c1c;
     border: none;
     color: white;
-    padding: 10px;
+    padding: 0.5rem 1rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 14px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 16px;
     transition: all .5s;
 }
 .button.red {
@@ -78,12 +222,11 @@ form {
     background: #2a982a;
 }
 
-
 .button:hover {
     color: white;
 }
 .button.default:hover{
-    background: #60748e;
+    background: #000000;
 }
 .button.red:hover{
     background: #9e0e0e;
@@ -119,4 +262,23 @@ form {
 }
 .button.green:active{
     background: #164016;
+}
+
+@media screen and (max-width: 500px) {
+    .logo {
+        font-size: 1.75rem;
+    }
+    .hero h1 {
+        font-size: 1.95rem;
+    }
+    .hero p {
+        font-size: 0.91rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 }

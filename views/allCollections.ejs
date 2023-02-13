@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
+    <%- include('layouts/header') %>
     <div class="main-container new">
-        <h4>Welcome to <a href="/">BibleTag</a></h4>
-        <h4>All collections: </h4>
-        <div class="art-det">
+        <h2 class="pg-title">All collections: </h2>
+        <div class="flex-container-cards">
             <% for (let i = 0; i < colls.length; i++) { %>
-                <div>
+                <div class="card">
                     <a href="/articles/collections/<%= colls[i].title %>"><%= colls[i].title %></a>
                 </div>
             <% } %>

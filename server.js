@@ -21,6 +21,12 @@ app.set('view engine', 'ejs');
 
 app.get('/', async(req, res) => {
     const articles = await Article.find().sort({ createdAt: 'desc' })
+    articles.forEach(async article => {
+        if(article.title === '') 
+        //remove the article from the array
+        articles.splice(articles.indexOf(article), 1)
+    })
+    console.log('articles: ', articles)
     if(articles.length === 0) res.send('no articles so <a href="/articles/new">Create one</a>')
     else {
         res.render('index', {

@@ -8,17 +8,16 @@
     <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
+    <%- include('layouts/header') %>
     <div class="main-container new">
         <div class="mcn">
-            <h4>Welcome to <a href="/">BibleTag</a></h4>
-            <p>Edith this article: <%= article.title %></p>
+            <h2>Edit this article: <%= article.title %></h2>
             <form action="/articles/<%= article.title %>?_method=PUT" method="post">
                 <input type="text" name="title" placeholder="Title" value="<%= article.title %>">
                 <br>
                 <input type="text" name="collectionName" placeholder="collection" value="<%= article.collectionName %>">
-                <input type="text" name="collectionToAdd" placeholder="collection to add" value="">
                 <br>
-                <textarea name="content" placeholder="Content" value="<%= article.content %>" style="height: 100px;"><%= article.content %></textarea>
+                <textarea name="markdown" placeholder="Content" value="<%= article.markdown %>" style="height: 100px;"><%= article.content %></textarea>
                 <br>
                 <input type="submit" class="button default" value="Edit article now!!">
             </form>
