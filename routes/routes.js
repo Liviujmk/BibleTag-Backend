@@ -73,14 +73,14 @@ router.post('/', async(req, res) => {
     const coll = new Collection()
     article.title = req.body.title
     article.collectionName = req.body.collectionName
-    article.content = req.body.content
+    article.markdown = req.body.markdown
     coll.title = article.collectionName
     if(req.body.title === '') return res.send(`title cannot be empty. Go back to <a href="/articles/new">Create article</a>`)
     try {
         if((await Collection.findOne({ title: req.body.collectionName })) == null) {
             await coll.save()
         }
-
+        console.log('coll: ', coll)
         if((await Article.findOne({ title: req.body.title })) == null) {
             await article.save()
             res.redirect(`/articles/${article.title}`) 
