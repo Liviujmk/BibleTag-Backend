@@ -15,7 +15,7 @@
             <form action="/articles/<%= article.title %>?_method=PUT" method="post">
                 <input type="text" name="title" placeholder="Title" value="<%= article.title %>">
                 <br>
-                <input type="text" name="collectionName" placeholder="collection" value="<%= article.collectionName %>">
+                <input type="text" name="collectionName" placeholder="Collection" value="<%= article.collectionName %>">
                 <br>
                 <textarea name="markdown" placeholder="Content" value="<%= article.markdown %>" style="height: 100px;"><%= article.content %></textarea>
                 <br>

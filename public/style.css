@@ -17,7 +17,7 @@ body {
 
 
 a {
-    color: rgb(19, 20, 21);
+    color: rgb(48, 27, 27);
     text-decoration: none;
     font-weight: 600;
 }
@@ -35,6 +35,10 @@ header {
 header a {
     color: #241f1f;
     text-decoration: none;
+}
+
+input {
+    font-family: 'Poppins', sans-serif;
 }
 
 .logo {
@@ -71,15 +75,16 @@ header .nav {
 
 
 .main-title, .main-container {
-    /*display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.65rem;
-    margin-bottom: 2.5rem;*/
+    padding-top: 0 !important;
 }
 
 .main-container.new{
     padding: 5rem;
+}
+
+.mcn {
+    max-width: 400px;
+    margin-inline: auto;
 }
 
 .pg-title {
@@ -157,7 +162,6 @@ header .nav {
 
 .cont-item {
     padding: 4rem;
-    border-bottom: 0.6px solid #ccc;
     padding-bottom: 15px;
     text-align: center;
 }
@@ -191,16 +195,28 @@ header .nav {
     height: 5rem;
 }
 
+div h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3.5rem;
+}
+
 form:not(.btn) {
     display: grid;
     margin-bottom: 2rem;
 }
 
 form input:not([type="submit"]), form textarea {
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     border: 2px solid #ccc;
     border-radius: 0.85rem;
     outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+form input:not([type="submit"]):focus, form textarea:focus {
+    border: 2px solid #000;
 }
 
 .button {
@@ -215,6 +231,13 @@ form input:not([type="submit"]), form textarea {
     cursor: pointer;
     border-radius: 16px;
     transition: all .5s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.button.default {
+    font-size: 1rem;
+    padding: .8rem;
+    background: #000000;
 }
 .button.red {
     background: #ca1616;
@@ -227,7 +250,8 @@ form input:not([type="submit"]), form textarea {
     color: white;
 }
 .button.default:hover{
-    background: #000000;
+    background: #303031;
+    box-shadow: 0 0 0 4px #d1d1d1;
 }
 .button.red:hover{
     background: #9e0e0e;

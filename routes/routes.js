@@ -36,23 +36,6 @@ router.get('/collections/:coltitle', async(req, res) => {
     })
 })
 
-router.post('/collections/:coltitle', async(req, res) => {
-    const coll = await Collection.findOne({ title: req.params.coltitle })
-    const article = new Article({
-        title: req.body.title,
-        collectionName: req.params.coltitle
-    })
-    try {
-        await article.save()
-        coll.articles.push(article)
-        await coll.save()
-        res.redirect(`/articles/collections/${req.params.coltitle}`)
-    } catch (error) {
-        console.warn(error)
-        res.redirect(`/articles/collections/${req.params.coltitle}`)
-    }
-})
-
 router.get('/:title', async(req, res) => {
     const article = await Article.findOne({ title: req.params.title })
     if(!article) return res.status(404).send(`Article not found. Go to <a href="/">home</a>`)
@@ -75,7 +58,7 @@ router.post('/', async(req, res) => {
     article.collectionName = req.body.collectionName
     article.markdown = req.body.markdown
     coll.title = article.collectionName
-    if(req.body.title === '') return res.send(`title cannot be empty. Go back to <a href="/articles/new">Create article</a>`)
+    if(req.body.title === '') return res.send(`Title cannot be empty. Go back to <a href="/articles/new">Create article</a>`)
     try {
         if((await Collection.findOne({ title: req.body.collectionName })) == null) {
             await coll.save()
@@ -84,7 +67,7 @@ router.post('/', async(req, res) => {
         if((await Article.findOne({ title: req.body.title })) == null) {
             await article.save()
             res.redirect(`/articles/${article.title}`) 
-        } else { res.send(`an article with this title already exists so go back to create another article <a href="/articles/new">Go back</a>`) }
+        } else { res.send(`An article with this title already exists so go back to create another article <a href="/articles/new">Go back</a>`) }
         
     } catch (error) {
         console.log(error)

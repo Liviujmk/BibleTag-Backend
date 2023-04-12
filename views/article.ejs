@@ -14,7 +14,7 @@
             <span class="article-tag">
                 <a href="/articles/collections/<%= article.collectionName %>"><%= article.collectionName %></a>
             </span>
-            <h2 class="article-title"><%= article.title %></h2>
+            <h2 class="article-title"><%= article.title.split("-").join(" ") %></h2>
             <div class="art-content">
                 <%- article.content %>
             </div>

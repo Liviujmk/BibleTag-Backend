@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Collection: <%= coll.title %></title>
-    <link rel="stylesheet" href="/public/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/public/style.css" />
+  </head>
+  <body>
     <%- include('layouts/header') %>
     <div class="main-container new">
-        <p>The collection's name is: <b><%= coll.title %></b></p>
-        <form action="/articles/collections/<%= coll.title %>" method="post">
-            <input type="text" name="title" placeholder="Title" value="">
-            <br>
-            <input type="submit" class="button default" value="Create article to this collection">
-        </form>
-        <h3>Down below are all the articles' titles that are included in this collection</h3>
+      <div class="cont-item art">
+        <a href="/articles/new?collectionName=<%= coll.title %>" class="button">Create article to this collection</a>
+        <h2>Articles from '<%= coll.title %>'</h2>
         <div class="flex-container-cards">
-            <% for (let i = 0; i < articles.length; i++) { %>
-                <div class="card">
-                    <a href="/articles/<%= articles[i].title %>"><%= articles[i].title  %></a>
-                </div>
-            <% } %>
+          <% for (let i = 0; i < articles.length; i++) { %>
+          <div class="card">
+            <a href="/articles/<%= articles[i].title %>"
+              ><%= articles[i].title %></a
+            >
+          </div>
+          <% } %>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

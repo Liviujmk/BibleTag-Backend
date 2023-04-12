@@ -23,6 +23,9 @@ const ArticleSchema = new mongoose.Schema({
 
 ArticleSchema.pre('validate', function(next) {
   if (this.title) {
+    // remove all spaces and replace with dashes
+    this.title = this.title.replace(/\s+/g, '-')
+
     this.slug = slugify(this.title, { lower: true, strict: true })
   }
 

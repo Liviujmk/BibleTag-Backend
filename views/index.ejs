@@ -26,7 +26,7 @@
             <div class="flex-container-cards">
                 <% for (var i = 0; i < articles.length; i++) { %>
                     <div class="card">
-                        <a href="/articles/<%= articles[i].title %>" class="topic"><%= articles[i].title %></a>
+                        <a href="/articles/<%= articles[i].title %>" class="topic"><%= articles[i].title.split("-").join(" ") %></a>
                     </div>
                 <% } %>
             </div>
