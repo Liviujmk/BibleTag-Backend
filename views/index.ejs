@@ -1,67 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BibleTag</title>
-    <link rel="stylesheet" href="/public/style.css">
-</head>
-<body>
-    <!-- <div class="main-title">
-        <h4>Welcome to <a href="/">BibleTag</a></h4>
-        <a href="/articles/new" class="button green">Create article</a>
-    </div> -->
+    <link rel="stylesheet" href="/public/style.css" />
+  </head>
+  <body>
     <%- include('layouts/header') %>
     <div class="main-container">
-        <div class="hero">
-            <h1>Search the Bible</h1>
-            <div class="search-bar">
-                <label for="search">Search articles</label>
-                <input type="text" id="search-a" name="search" placeholder="Search articles...">
-            </div>
+      <div class="hero">
+        <h1>Search the Bible</h1>
+        <div class="search-bar">
+          <label for="search">Search articles</label>
+          <input
+            type="text"
+            id="search-a"
+            name="search"
+            placeholder="Search articles..."
+          />
         </div>
-        <div class="cont-item art">
-            <h2 class="pg-title">Articles</h2>
-            <div class="flex-container-cards">
-                <% for (var i = 0; i < articles.length; i++) { %>
-                    <div class="card">
-                        <a href="/articles/<%= articles[i].title %>" class="topic"><%= articles[i].title.split("-").join(" ") %></a>
-                    </div>
-                <% } %>
-            </div>
+      </div>
+      <h2 class="pg-title">Articles</h2>
+      <div class="flex-container-cards">
+        <% for (var i = 0; i < articles.length; i++) { %>
+        <div class="card">
+          <a href="/articles/<%= articles[i].title %>" class="topic"
+            ><%= articles[i].title.split("-").join(" ") %></a
+          >
+        </div>
+        <% } %>
+      </div>
     </div>
 
-
     <script>
-        var searcha = document.getElementById('search-a');
-        var searchv = document.getElementById('search-v');
-        searcha.addEventListener('keyup', function(e) {
-            var filter = e.target.value.toLowerCase();
-            var topics = document.querySelectorAll('.topic');
-            
-            topics.forEach(topic => {
-                if (topic.textContent.toLowerCase().includes(filter.toLowerCase())) {
-                    topic.parentNode.style.display = '';
-                } else {
-                    topic.parentNode.style.display = 'none';
-                }
-            });
-        })
+      var searcha = document.getElementById("search-a");
+      var searchv = document.getElementById("search-v");
+      searcha.addEventListener("keyup", function (e) {
+        var filter = e.target.value.toLowerCase();
+        var topics = document.querySelectorAll(".topic");
 
-        searchv.addEventListener('keyup', function(e) {
-            var filter = e.target.value.toLowerCase();
-            var verse = document.querySelectorAll('.verse');
-            
-            verse.forEach(verse => {
-                if (verse.textContent.toLowerCase().includes(filter.toLowerCase())) {
-                    verse.parentNode.style.display = '';
-                } else {
-                    verse.parentNode.style.display = 'none';
-                }
-            });
-        })
+        topics.forEach((topic) => {
+          if (topic.textContent.toLowerCase().includes(filter.toLowerCase())) {
+            topic.parentNode.style.display = "";
+          } else {
+            topic.parentNode.style.display = "none";
+          }
+        });
+      });
+
+      searchv.addEventListener("keyup", function (e) {
+        var filter = e.target.value.toLowerCase();
+        var verse = document.querySelectorAll(".verse");
+
+        verse.forEach((verse) => {
+          if (verse.textContent.toLowerCase().includes(filter.toLowerCase())) {
+            verse.parentNode.style.display = "";
+          } else {
+            verse.parentNode.style.display = "none";
+          }
+        });
+      });
     </script>
-    
-</body>
+  </body>
 </html>

@@ -9,19 +9,19 @@
   </head>
   <body>
     <%- include('layouts/header') %>
-    <div class="main-container new">
-      <div class="cont-item art">
-        <a href="/articles/new?collectionName=<%= coll.title %>" class="button">Create article to this collection</a>
-        <h2>Articles from '<%= coll.title %>'</h2>
-        <div class="flex-container-cards">
-          <% for (let i = 0; i < articles.length; i++) { %>
-          <div class="card">
-            <a href="/articles/<%= articles[i].title %>"
-              ><%= articles[i].title %></a
-            >
-          </div>
-          <% } %>
+    <div class="main-container">
+      <a href="/articles/new?collectionName=<%= coll.title %>" class="button"
+        >Create article to this collection</a
+      >
+      <h2>Articles from '<%= coll.title %>'</h2>
+      <div class="flex-container-cards">
+        <% for (let i = 0; i < articles.length; i++) { %>
+        <div class="card">
+          <a href="/articles/<%= articles[i].title %>"
+            ><%= articles[i].title %></a
+          >
         </div>
+        <% } %>
       </div>
     </div>
   </body>

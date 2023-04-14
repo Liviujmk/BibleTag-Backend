@@ -9,7 +9,7 @@
 </head>
 <body>
     <%- include('layouts/header') %>
-    <div class="main-container new">
+    <div class="main-container">
         <div class="mcn">
             <h2>Edit this article: <%= article.title %></h2>
             <form action="/articles/<%= article.title %>?_method=PUT" method="post">
@@ -19,7 +19,7 @@
                 <br>
                 <textarea name="markdown" placeholder="Content" value="<%= article.markdown %>" style="height: 100px;"><%= article.content %></textarea>
                 <br>
-                <input type="submit" class="button default" value="Edit article now!!">
+                <button type="submit" class="button default">Edit article</button>
             </form>
         </div>
     </div>

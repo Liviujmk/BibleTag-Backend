@@ -75,7 +75,8 @@ header .nav {
 
 
 .main-title, .main-container {
-    padding-top: 0 !important;
+    padding: 2.5rem;
+    text-align: center;
 }
 
 .main-container.new{
@@ -95,6 +96,8 @@ header .nav {
 .art-details {
     margin-bottom: 2.5rem;
     border-bottom: 1px solid #e6e6e6d2;
+    max-width: 1000px;
+    margin-inline: auto;
 }
 
 .article-title {
@@ -111,6 +114,7 @@ header .nav {
     cursor: pointer;
     border-radius: 16px;
     transition: all .5s;
+    margin-bottom: 1rem;
 }
 
 .article-tag a {
@@ -127,6 +131,7 @@ header .nav {
 
 .article-actions {
     display: flex;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -193,6 +198,15 @@ header .nav {
     border-radius: 0.85rem;
     width: 17rem;
     height: 5rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 0 3px rgb(0 0 0 / 10%);
+}
+
+.card a {
+    text-align: center;
 }
 
 div h2 {
@@ -209,7 +223,7 @@ form:not(.btn) {
 
 form input:not([type="submit"]), form textarea {
     padding: 1rem;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 0.85rem;
     outline: none;
     font-family: 'Poppins', sans-serif;
@@ -228,6 +242,7 @@ form input:not([type="submit"]):focus, form textarea:focus {
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
     border-radius: 16px;
     transition: all .5s;
@@ -289,13 +304,36 @@ form input:not([type="submit"]):focus, form textarea:focus {
     background: #164016;
 }
 
+.rtTooltipDropShadow .rtContainer {
+    -webkit-box-shadow: 0px 0px 3px 0px #566476;
+    -moz-box-shadow: 0px 0px 3px 0px #566476;
+    box-shadow: 0px 0px 3px 0px #566476;
+}
+
+.rtTooltipRoundedCorners .rtContainer {
+    border-radius: 16px;
+}
+
+.rtTooltipBody, .rtTooltipHeader {
+    font-family: 'Poppins', sans-serif;
+}
+
+.rtTooltipSocial, .rtTooltipFooter .rtTooltipMoreLink {
+    display: none;
+}
+
+.rtTooltipBrandLink a {
+    font-weight: 400;
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
 @media screen and (max-width: 500px) {
-    .flex-container-cards {
-        flex-direction: column;
-    }
-    /*nav*/
     header {
         flex-direction: column;
         gap: 2rem;
+    }
+    .article-title {
+        font-size: 1.65rem;
     }
 }
