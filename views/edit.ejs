@@ -11,9 +11,9 @@
     <%- include('layouts/header') %>
     <div class="main-container">
         <div class="mcn">
-            <h2>Edit this article: <%= article.title %></h2>
-            <form action="/articles/<%= article.title %>?_method=PUT" method="post">
-                <input type="text" name="title" placeholder="Title" value="<%= article.title %>">
+            <h2>Edit this article: <%= article.title.split("-").join(" ") %></h2>
+            <form action="/articles/<%= article.title.split("-").join(" ") %>?_method=PUT" method="post">
+                <input type="text" name="title" placeholder="Title" value="<%= article.title.split("-").join(" ") %>">
                 <br>
                 <input type="text" name="collectionName" placeholder="Collection" value="<%= article.collectionName %>">
                 <br>
