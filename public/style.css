@@ -281,7 +281,7 @@ form input:not([type="submit"]):focus, form textarea:focus {
     border: 1.5px solid black;
 }
 .button.default:focus{
-    background: #4a5f7d;
+    background: #202327;
 }
 .button.red:focus{
     background: #9e0e0e;
@@ -295,7 +295,7 @@ form input:not([type="submit"]):focus, form textarea:focus {
     color: white;
 }
 .button.default:active{
-    background: #29374a;
+    background: #1a212b;
 }
 .button.red:active{
     background: #4f0e0e;

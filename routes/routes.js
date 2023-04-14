@@ -74,11 +74,12 @@ router.post('/', async(req, res) => {
     }
 })
 
-router.put('/:title', async(req, res) => {
-    const article = await Article.findOne({ title: req.params.title })
+router.put('/:id', async(req, res) => {
+    const article = await Article.findById(req.params.id)
     article.title = req.body.title
     article.collectionName = req.body.collectionName
     article.markdown = req.body.markdown
+    
     try {
         await article.save()
         res.redirect(`/articles/${article.title}`)
@@ -87,8 +88,8 @@ router.put('/:title', async(req, res) => {
     }
 })
 
-router.delete('/:title', async(req, res) => {
-    await Article.findOneAndDelete({ title: req.params.title })
+router.delete('/:id', async(req, res) => {
+    await Article.findByIdAndDelete(req.params.id)
     try {
         res.redirect(`/`)
     } catch (error) {

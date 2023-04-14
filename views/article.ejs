@@ -21,7 +21,7 @@
         </div>
         <div class="article-actions">
             <a href="/articles/<%= article.title %>/edit" class="button green">Edit article</a>
-            <form class="btn" action="/articles/<%= article.title %>?_method=DELETE" method="post">
+            <form class="btn" action="/articles/<%= article.id %>?_method=DELETE" method="post">
                 <button type="submit" class="button red">Delete</button>
             </form>
         </div>
