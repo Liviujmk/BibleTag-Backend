@@ -201,6 +201,7 @@ header .nav {
     transition: all 0.3s ease;
 }
 
+
 .card:hover {
     box-shadow: 0 0 0 3px rgb(0 0 0 / 10%);
 }
@@ -227,6 +228,7 @@ form input:not([type="submit"]), form textarea {
     border-radius: 0.85rem;
     outline: none;
     font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
 }
 
 form input:not([type="submit"]):focus, form textarea:focus {
@@ -303,6 +305,7 @@ form input:not([type="submit"]):focus, form textarea:focus {
 .button.green:active{
     background: #164016;
 }
+
 
 .rtTooltipDropShadow .rtContainer {
     -webkit-box-shadow: 0px 0px 3px 0px #566476;
