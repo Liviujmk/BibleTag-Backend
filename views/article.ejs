@@ -11,7 +11,7 @@
     <%- include('layouts/header') %>
     <div class="main-container new">
         <div class="art-details">
-            <span class="article-tag">
+            <span class="article-tag chip">
                 <a href="/articles/collections/<%= article.collectionName %>"><%= article.collectionName %></a>
             </span>
             <h2 class="article-title"><%= article.title.split("-").join(" ") %></h2>
@@ -40,7 +40,7 @@
                         color : "#000000",
                     },
                     body   : {
-                        color : "#434343",
+                        color : "#1c1919",
                     }
                 }
             }

@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background-color: #000;
+    color: #fff;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 100%;
@@ -15,11 +20,49 @@ body {
     padding: 0;
 }
 
+h1 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 40px;
+}
+
+h2,h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 32px;
+    line-height: 1.25;
+}
+
+h4 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 24px;
+    line-height: 1.25;
+}
+
 
 a {
     color: rgb(48, 27, 27);
-    text-decoration: none;
-    font-weight: 600;
+    /* text-decoration: underline; */
+    font-weight: 400;
+}
+
+li, p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.78;
+    margin-bottom: 1.25rem;
+    text-align: justify;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+textarea {
+    font-family: 'Poppins', sans-serif;
+    height: 300px;
+    width: 100%;
 }
 
 
@@ -35,6 +78,7 @@ header {
 header a {
     color: #241f1f;
     text-decoration: none;
+    font-weight: 600;
 }
 
 input {
@@ -68,9 +112,7 @@ header .nav {
 
 .hero h1 {
     color: #1c1919;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -84,8 +126,13 @@ header .nav {
 }
 
 .mcn {
-    max-width: 400px;
+    max-width: 650px;
     margin-inline: auto;
+}
+
+.mcn h2 a {
+    color: #231a42;
+    text-decoration: underline;
 }
 
 .pg-title {
@@ -104,17 +151,15 @@ header .nav {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2.55rem;
-    margin-top: .2rem;
+    margin-top: .5rem;
+    text-align: center;
 }
 
 .article-tag {
     display: inline-flex;
     padding: 0.3rem 0.6rem;
     background-color: #000;
-    cursor: pointer;
     border-radius: 16px;
-    transition: all .5s;
-    margin-bottom: 1rem;
 }
 
 .article-tag a {
@@ -125,7 +170,8 @@ header .nav {
     font-weight: 400;
 }
 
-.art-content p {
+.art-content {
+    margin-top: 4.5rem;
     text-align: left;
 }
 
@@ -133,6 +179,16 @@ header .nav {
     display: flex;
     justify-content: center;
     gap: 1rem;
+}
+
+.chip {
+    cursor: pointer;
+    transition: all .5s;
+    margin-bottom: 1rem;
+}
+
+a.chip{
+    margin-bottom: 1.5rem;
 }
 
 .main-title h4{
@@ -161,7 +217,7 @@ header .nav {
 .search-bar input::placeholder {
     color: #a5a5a5;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 
@@ -206,20 +262,26 @@ header .nav {
     box-shadow: 0 0 0 3px rgb(0 0 0 / 10%);
 }
 
+.card:focus {
+    box-shadow: 0 0 0 4px rgb(0 0 0 / 10%);
+}
+
 .card a {
     text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
 }
 
 div h2 {
-    text-align: center;
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 3.5rem;
+    margin-top: 2rem;
 }
 
 form:not(.btn) {
     display: grid;
-    margin-bottom: 2rem;
+    margin-top: 2.5rem;
 }
 
 form input:not([type="submit"]), form textarea {
@@ -247,7 +309,7 @@ form input:not([type="submit"]):focus, form textarea:focus {
     font-weight: 500;
     cursor: pointer;
     border-radius: 16px;
-    transition: all .5s;
+    transition: all .285s;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -266,24 +328,23 @@ form input:not([type="submit"]):focus, form textarea:focus {
 .button:hover {
     color: white;
 }
-.button.default:hover{
-    background: #303031;
-    box-shadow: 0 0 0 4px #d1d1d1;
+.button:hover{
+    box-shadow: 0 0 0 4px #afafaf;
 }
 .button.red:hover{
-    background: #9e0e0e;
+    box-shadow: 0 0 0 4px #d69292;
 }
 .button.green:hover{
-    background: #256b25;
+    box-shadow: 0 0 0 4px #7fc87f;
 }
 
 
 .button:focus {
     color: white;
-    border: 1.5px solid black;
 }
 .button.default:focus{
     background: #202327;
+    box-shadow: 0 0 0 6px #afafaf;
 }
 .button.red:focus{
     background: #9e0e0e;
@@ -321,6 +382,15 @@ form input:not([type="submit"]):focus, form textarea:focus {
     font-family: 'Poppins', sans-serif;
 }
 
+.rtTooltipBody p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.rtTooltipBody .ch-ref {
+    font-weight: 600;
+}
+
 .rtTooltipSocial, .rtTooltipFooter .rtTooltipMoreLink {
     display: none;
 }
@@ -338,5 +408,8 @@ form input:not([type="submit"]):focus, form textarea:focus {
     }
     .article-title {
         font-size: 1.65rem;
+    }
+    .main-container.new {
+        padding: 2.5rem;
     }
 }

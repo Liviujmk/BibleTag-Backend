@@ -10,10 +10,10 @@
   <body>
     <%- include('layouts/header') %>
     <div class="main-container">
-      <a href="/articles/new?collectionName=<%= coll.title %>" class="button"
+      <a href="/articles/new?collectionName=<%= coll.title %>" class="button chip"
         >Create article to this collection</a
       >
-      <h2>Articles from '<%= coll.title %>'</h2>
+      <h2 class="article-title">Articles from '<%= coll.title %>'</h2>
       <div class="flex-container-cards">
         <% for (let i = 0; i < articles.length; i++) { %>
         <div class="card">

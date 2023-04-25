@@ -20,7 +20,7 @@ app.use('/public', express.static('public'))
 app.set('view engine', 'ejs');
 
 app.get('/', async(req, res) => {
-    const articles = await Article.find().sort({ createdAt: 'desc' })
+    const articles = await Article.find().sort({ updatedAt: 'desc' })
     articles.forEach(async article => {
         if(article.title === '') 
         //remove the article from the array

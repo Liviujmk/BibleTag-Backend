@@ -19,6 +19,7 @@ const ArticleSchema = new mongoose.Schema({
       type: String,
       required: true
     },
+    updatedAt: { type: Date, default: Date.now },
 });
 
 ArticleSchema.pre('validate', function(next) {

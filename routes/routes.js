@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
+
 const Article = require('../models/article');
 const Collection = require('../models/coll');
 
@@ -57,6 +57,7 @@ router.post('/', async(req, res) => {
     article.title = req.body.title
     article.collectionName = req.body.collectionName
     article.markdown = req.body.markdown
+    article.updatedAt = Date.now()
     coll.title = article.collectionName
     if(req.body.title === '') return res.send(`Title cannot be empty. Go back to <a href="/articles/new">Create article</a>`)
     try {
@@ -79,6 +80,7 @@ router.put('/:id', async(req, res) => {
     article.title = req.body.title
     article.collectionName = req.body.collectionName
     article.markdown = req.body.markdown
+    article.updatedAt = Date.now()
     
     try {
         await article.save()
